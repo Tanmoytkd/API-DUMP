@@ -3,7 +3,10 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.all(/.*/, (req, res) => {
-    res.send(req.url);
+    setTimeout(()=>{
+        res.send(req.url);
+    }, 1000);
+
     console.log(req);
     console.log("\n\n\n");
 })
