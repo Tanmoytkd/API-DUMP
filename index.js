@@ -2,8 +2,10 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-app.get(/.*/, (req, res) => {
+app.all(/.*/, (req, res) => {
     res.send(req.url);
+    console.log(req);
+    console.log("\n\n\n");
 })
 
 app.listen(port, () => {
