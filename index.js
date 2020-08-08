@@ -4,7 +4,10 @@ const port = process.env.PORT || 3000
 
 app.all(/.*/, (req, res) => {
     setTimeout(()=>{
-        res.send(req.url);
+        let response = JSON.stringify({
+            url : req.url
+        });
+        res.send(response);
     }, 1000);
 
     console.log(req);
